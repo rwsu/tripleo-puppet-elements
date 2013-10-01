@@ -7,7 +7,7 @@ yum install -y http://repos.fedorapeople.org/repos/openstack/openstack-havana/rd
 
 mkdir -p /etc/puppet/manifests/
 rm -f /etc/puppet/manifests/*
-for manifest in /tmp/in_target.d/manifests/*.pp ; do
+for manifest in $(ls /tmp/in_target.d/manifests/*.pp | sort -r) ; do
   target_manifest=/etc/puppet/manifests/$(basename ${manifest/-*./.})
   if [ ! -e $target_manifest ] ; then
     cp /tmp/in_target.d/common.pp $target_manifest
