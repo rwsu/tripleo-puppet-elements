@@ -1,0 +1,5 @@
+#!/bin/bash
+set -eux
+
+curl http://repos.fedorapeople.org/repos/openstack-m/openstack-m/fedora-openstack-m.repo -o /etc/yum.repos.d/fedora-openstack-m.repo
+
